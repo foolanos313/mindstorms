@@ -1,4 +1,5 @@
 import lejos.nxt.Button;
+import lejos.nxt.ButtonListener;
 import lejos.nxt.SensorPort;
 import lejos.nxt.TouchSensor;
 import lejos.robotics.navigation.DifferentialPilot;
@@ -6,7 +7,8 @@ import lejos.robotics.navigation.DifferentialPilot;
 /**
  * Robot that stops if it hits something before it completes its travel.
  */
-public class Pilotor {
+public class Pilotor implements ButtonListener{
+	public int d;
   DifferentialPilot pilot;
   TouchSensor bump = new TouchSensor(SensorPort.S1);
 
@@ -18,4 +20,15 @@ public class Pilotor {
     System.out.println(" "+pilot.getMovement().getDistanceTraveled());
     Button.waitForAnyPress();
   }
+
+@Override
+public void buttonPressed(Button b) {
+	go(d);	
+}
+
+@Override
+public void buttonReleased(Button b) {
+	// TODO Auto-generated method stub
+	
+}
 }

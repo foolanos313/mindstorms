@@ -1,15 +1,35 @@
 import lejos.nxt.Button;
+import lejos.nxt.ButtonListener;
 import lejos.nxt.ColorSensor;
 import lejos.nxt.LCD;
 import lejos.nxt.Motor;
 import lejos.nxt.SensorPort;
-import lejos.nxt.TouchSensor;
 import lejos.robotics.navigation.DifferentialPilot;
 
 public class Tacometro {
+	public static int distance = 0;
+	public static boolean walked = false;
 
 	public static void main(String[] args) {
-		PilotTest();
+		System.out.println("Starting...");
+		Button.waitForAnyPress();
+		
+		UltraMotor motor = new UltraMotor();
+		motor.Measurement();
+	}
+	
+	static void Run(ButtonListener buttonListener){
+		System.out.println("HUE");
+		LCD.drawInt(Tacometro.distance, 0, 1);
+		Button.ENTER.addButtonListener(buttonListener);;
+		Button.LEFT.addButtonListener(new SpeedAdjusterButtonListener(-180));
+		Button.RIGHT.addButtonListener(new SpeedAdjusterButtonListener(180));
+		while(!walked);
+	}
+	
+	static void HereWeGo(){
+		Motora motora = new Motora();
+		motora.Go(3600);
 	}
 	
 	static void NoPilotTest(){
