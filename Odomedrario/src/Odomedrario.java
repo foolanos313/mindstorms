@@ -16,10 +16,13 @@ public class Odomedrario {
 		Button.waitForAnyPress();
 		LCD.clear();
 		
+		Motor.B.setSpeed(900);
+		Motor.C.setSpeed(900);
+		
 		Motor.B.forward();
 		Motor.C.forward();
 		
-		while(voltas < 20){
+		while(voltas < 28){
 			int red = colorSensor.getColor().getRed();
 			if(!isInBlue && red > redThreshold){
 				voltas++;
