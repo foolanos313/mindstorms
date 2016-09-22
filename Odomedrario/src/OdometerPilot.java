@@ -1,28 +1,23 @@
-import lejos.nxt.Button;
-import lejos.nxt.ButtonListener;
 import lejos.nxt.ColorSensor;
 import lejos.nxt.LCD;
 import lejos.nxt.Motor;
 import lejos.nxt.SensorPort;
 
-public class OdometerPilot implements ButtonListener{
-	public void Go(float d){
-		System.out.println("Press any key to start OdometerPilot...");
-		Button.waitForAnyPress();
-		LCD.clear();
-		
-		float myd = d / 180.0f;
+public class OdometerPilot extends AbstractPilot{
+	public OdometerPilot(){
+		this.name = "OdometerPilot";
+	}
+	
+	@Override
+	public void pilot(int d) {
+		float myd = d;
 		Boolean isInBlue = false;
 		int redThreshold = 120;
 		int voltas  = 0;
 		ColorSensor colorSensor = new ColorSensor(SensorPort.S4);
-		LCD.clear();
 		
-		Motor.B.setSpeed(900);
-		Motor.C.setSpeed(900);
-		
-		Motor.B.forward();
-		Motor.C.forward();
+		Motor.B.backward();
+		Motor.C.backward();
 		
 		while(voltas < myd){
 			int red = colorSensor.getColor().getRed();
@@ -40,22 +35,6 @@ public class OdometerPilot implements ButtonListener{
 		}
 		
 		Motor.B.stop();
-		Motor.C.stop();
-		
-		System.out.println("OdometerPilot is over!!!");
-		Button.waitForAnyPress();
-		Settings.walked = true;
-	}
-
-	@Override
-	public void buttonPressed(Button b) {
-		Go(Settings.speed);
-		
-	}
-
-	@Override
-	public void buttonReleased(Button b) {
-		// TODO Auto-generated method stub
-		
+		Motor.C.stop();		
 	}
 }

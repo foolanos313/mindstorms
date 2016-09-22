@@ -1,16 +1,16 @@
 import lejos.nxt.Button;
-import lejos.nxt.ButtonListener;
 import lejos.nxt.LCD;
 
 public class Odomedrario {
 
 	public static void main(String[] args) {
-		Pilot(new TacometerPilot(), 180);
+		Pilot(new OdometerPilot(), 1);
 	}
 
-	static void Pilot(ButtonListener pilot, int rate){
-		LCD.drawInt(Settings.speed, 0, 1);
-		Button.ENTER.addButtonListener(pilot);;
+	static void Pilot(AbstractPilot pilot, int rate){
+		pilot.InitialMessage();
+		LCD.drawInt(Settings.speed, 0, 3);
+		Button.ENTER.addButtonListener(pilot);
 		Button.LEFT.addButtonListener(new SpeedAdjusterButtonListener(-rate));
 		Button.RIGHT.addButtonListener(new SpeedAdjusterButtonListener(rate));
 		while(!Settings.walked);

@@ -14,6 +14,7 @@ public class Pilotor implements ButtonListener{
 
   public void go(int distance) {
     pilot.travel(distance, true);
+    
     while (pilot.isMoving()) {
       if (bump.isPressed()) pilot.stop();
     }
