@@ -22,11 +22,9 @@ public abstract class AbstractPilot implements ButtonListener{
 	
 	public abstract void pilot(int d);
 	
-	@Override
 	public void buttonPressed(Button b) {
 		go(Settings.speed);
 	}
 
-	@Override
 	public void buttonReleased(Button b) {}
 }

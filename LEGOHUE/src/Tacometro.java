@@ -1,9 +1,7 @@
 import lejos.nxt.Button;
 import lejos.nxt.ButtonListener;
-import lejos.nxt.ColorSensor;
 import lejos.nxt.LCD;
 import lejos.nxt.Motor;
-import lejos.nxt.SensorPort;
 import lejos.robotics.navigation.DifferentialPilot;
 
 public class Tacometro {
@@ -34,7 +32,6 @@ public class Tacometro {
 	
 	static void NoPilotTest(){
 		System.out.println("Tacometro");
-		ColorSensor colorSensor = new ColorSensor(SensorPort.S4);
 		
 		Button.waitForAnyPress();
 		LCD.clear();

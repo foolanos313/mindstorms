@@ -8,7 +8,7 @@ import lejos.nxt.SensorPort;
 public class OdoMotora implements ButtonListener{
 	public void Go(float d){
 		float myd = d / 180.0f;
-		Boolean isInBlue = false;
+		boolean isInBlue = false;
 		int redThreshold = 120;
 		int voltas  = 0;
 		ColorSensor colorSensor = new ColorSensor(SensorPort.S4);
@@ -43,13 +43,11 @@ public class OdoMotora implements ButtonListener{
 		Tacometro.walked = true;
 	}
 
-	@Override
 	public void buttonPressed(Button b) {
 		Go(Tacometro.distance);
 		
 	}
 
-	@Override
 	public void buttonReleased(Button b) {
 		// TODO Auto-generated method stub
 		

@@ -7,7 +7,6 @@ public class OdoSonicPilot extends AbstractPilot {
 		this.name = "OdoSonicPilot";
 	}
 	
-	@Override
 	public void pilot(int d) {
 		Odometer odometer = new Odometer();
 		UltrasonicSensor sensor = new UltrasonicSensor(SensorPort.S1);

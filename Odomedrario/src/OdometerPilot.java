@@ -5,7 +5,6 @@ public class OdometerPilot extends AbstractPilot{
 		this.name = "OdometerPilot";
 	}
 	
-	@Override
 	public void pilot(int d) {
 		Odometer odometer = new Odometer();
 		

@@ -9,14 +9,12 @@ public class SpeedAdjusterButtonListener implements ButtonListener{
 		this.incrementer = incrementer;
 	}
 	
-	@Override
 	public void buttonPressed(Button b) {
 		Tacometro.distance += incrementer;
 		LCD.clear();
 		LCD.drawInt(Tacometro.distance, 0, 1);
 	}
 
-	@Override
 	public void buttonReleased(Button b) {
 		// TODO Auto-generated method stub
 		

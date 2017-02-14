@@ -9,14 +9,12 @@ public class SpeedAdjusterButtonListener implements ButtonListener{
 		this.incrementer = incrementer;
 	}
 	
-	@Override
 	public void buttonPressed(Button b) {
 		Settings.speed += incrementer;
 		LCD.clear();
 		LCD.drawInt(Settings.speed, 0, 1);
 	}
 
-	@Override
 	public void buttonReleased(Button b) {}
 
 }

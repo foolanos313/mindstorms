@@ -5,7 +5,7 @@ public class TacometerPilot extends AbstractPilot{
 	public TacometerPilot(){
 		this.name = "TacometerPilot";
 	}
-	@Override
+	
 	public void pilot(int d) {
 		Motor.B.forward();
 		Motor.C.forward();

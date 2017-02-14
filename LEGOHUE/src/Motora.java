@@ -30,13 +30,11 @@ public class Motora implements ButtonListener{
 		Tacometro.walked = true;
 	}
 
-	@Override
 	public void buttonPressed(Button b) {
 		Go(Tacometro.distance);
 		
 	}
 
-	@Override
 	public void buttonReleased(Button b) {
 		// TODO Auto-generated method stub
 		

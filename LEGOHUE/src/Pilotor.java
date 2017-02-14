@@ -22,12 +22,10 @@ public class Pilotor implements ButtonListener{
     Button.waitForAnyPress();
   }
 
-@Override
 public void buttonPressed(Button b) {
 	go(d);	
 }
 
-@Override
 public void buttonReleased(Button b) {
 	// TODO Auto-generated method stub
 	

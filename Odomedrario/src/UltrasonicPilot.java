@@ -8,7 +8,6 @@ public class UltrasonicPilot extends AbstractPilot{
 		this.name = "UltrasonicPilot";
 	}
 	
-	@Override
 	public void pilot(int d) {
 		UltrasonicSensor sensor = new UltrasonicSensor(SensorPort.S1);
 		Motor.B.backward();

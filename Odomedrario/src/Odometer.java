@@ -5,7 +5,7 @@ public class Odometer {
 	int voltas = 0;
 	int redThreshold = 120;
 	ColorSensor colorSensor;
-	Boolean isInBlue = false;
+	boolean isInBlue = false;
 	
 	public Odometer(){
 		colorSensor = new ColorSensor(SensorPort.S4);
